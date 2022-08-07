@@ -32,6 +32,12 @@ import { AddCategoriesComponent } from './pages/admin/add-categories/add-categor
 import { ViewQuizzesComponent } from './pages/view-quizzes/view-quizzes.component';
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { UpdateQuizComponent } from './pages/update-quiz/update-quiz.component';
+import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
+import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { SidebarUserComponent } from './pages/user/sidebar-user/sidebar-user.component';
+import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +55,11 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AddCategoriesComponent,
     ViewQuizzesComponent,
     AddQuizComponent,
+    UpdateQuizComponent,
+    ViewQuizQuestionsComponent,
+    AddQuestionComponent,
+    SidebarUserComponent,
+    LoadQuizComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +79,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MatSlideToggleModule,
     MatSelectModule,
     NgxPaginationModule,
+    CKEditorModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

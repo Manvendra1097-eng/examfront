@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
           this.router.navigateByUrl('/admin');
         } else if (this.loginService.getUserRole() === 'NORMAL') {
           // goto normal user dashboard
-          this.router.navigateByUrl('/user-dashboard');
+          this.router.navigateByUrl('/user-dashboard/0');
         } else {
           this.loginService.logout();
         }

@@ -1,5 +1,12 @@
-<div class="bootstrap-warapper">
-  <div class="container">
-    <h1>Welcome to User dashboard</h1>
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <app-sidebar-user></app-sidebar-user>
+      </div>
+      <div class="col-md-10">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
   </div>
 </div>

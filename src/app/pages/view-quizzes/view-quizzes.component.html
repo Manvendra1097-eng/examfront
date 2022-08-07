@@ -20,14 +20,28 @@
     <p>{{ q.description }}</p>
   </mat-card-header>
   <mat-card-actions>
-    <button class="ml-20" mat-flat-button color="primary">Questions</button>
+    <button
+      [routerLink]="'/admin/view-questions/' + q.id + '/' + q.tittle"
+      class="ml-20"
+      mat-flat-button
+      color="primary"
+    >
+      Questions
+    </button>
     <button class="ml-20" mat-stroked-button color="primary">
       Max Marks {{ q.maxMarks }}
     </button>
     <button class="ml-20" mat-stroked-button color="primary">
       Questions {{ q.noOfQuestion }}
     </button>
-    <button class="ml-20" mat-flat-button color="primary">Update</button>
+    <button
+      [routerLink]="'/admin/quiz/' + q.id"
+      class="ml-20"
+      mat-flat-button
+      color="primary"
+    >
+      Update
+    </button>
     <button class="ml-20" mat-flat-button color="primary">Attempts</button>
     <button
       (click)="deleteQuiz(q.id)"
