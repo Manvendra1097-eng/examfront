@@ -1,0 +1,61 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <mat-card>
+          <mat-card-header>
+            <!-- Heading -->
+            <mat-card-title>
+              <!-- title -->
+              Read the instruction of this page carefully
+            </mat-card-title>
+            <mat-card-subtitle> One step more to go </mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-content class="ml-20">
+            <!-- content -->
+            <h3 *ngIf="quiz">{{ quiz.tittle }}</h3>
+            <p *ngIf="quiz">{{ quiz.description }}</p>
+            <mat-divider></mat-divider><br />
+            <h1>Important Instruction</h1>
+            <ul>
+              <li>This quiz is only for practice purpose.</li>
+              <li>
+                You have to submit quiz with in
+                <b *ngIf="quiz">{{ quiz.noOfQuestion * 2 }} minutes.</b>
+              </li>
+              <li>You can attemp quiz any number of time.</li>
+              <li>
+                There are<b *ngIf="quiz"> {{ quiz.noOfQuestion }} question</b>
+                in the quiz.
+              </li>
+              <li>
+                Each questions carry
+                <b *ngIf="quiz">{{ quiz.maxMarks / quiz.noOfQuestion }}</b
+                >. No negative marks for wroung answer.
+              </li>
+              <li>All question is of MCQ types.</li>
+            </ul>
+            <mat-divider></mat-divider>
+            <h1>Attempting Quiz</h1>
+            <ul>
+              <li>Clic <b>Start Quiz</b> button to start quiz.</li>
+              <li>
+                Time will start the moment you click the start test button
+              </li>
+              <li>Scroll down to move to next question</li>
+            </ul>
+          </mat-card-content>
+
+          <mat-card-actions class="text-center">
+            <!-- action  -->
+            <button (click)="startQuiz()" mat-raised-button color="primary">
+              Start Quiz
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- {{ quiz | json }} -->

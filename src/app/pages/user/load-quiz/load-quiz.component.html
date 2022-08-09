@@ -14,7 +14,13 @@
           </mat-card-content>
           <mat-card-actions>
             <button mat-button color="primary">View</button>
-            <button mat-button color="accent">Start</button>
+            <button
+              [routerLink]="'/user-dashboard/instruction/' + q.id"
+              mat-button
+              color="accent"
+            >
+              Start
+            </button>
             <button mat-button color="primary">
               Ques: {{ q.noOfQuestion }}
             </button>

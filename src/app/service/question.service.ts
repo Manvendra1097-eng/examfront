@@ -11,6 +11,9 @@ export class QuestionService {
   public getQuestionsOfQuiz(id: any) {
     return this._http.get(`${baseUrl}/question/quiz/${id}`);
   }
+  public getQuestionsOfQuizForTest(id: any) {
+    return this._http.get(`${baseUrl}/question/quiz/${id}`);
+  }
 
   public addQuestion(question: any) {
     return this._http.post(`${baseUrl}/question/`, question);

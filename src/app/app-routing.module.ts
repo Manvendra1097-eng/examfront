@@ -11,7 +11,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { UpdateQuizComponent } from './pages/update-quiz/update-quiz.component';
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
+import { StartComponent } from './pages/user/start/start.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { ViewQuizzesComponent } from './pages/view-quizzes/view-quizzes.component';
 import { AdminGuard } from './service/admin.guard';
@@ -82,7 +84,16 @@ const routes: Routes = [
         path: ':cId',
         component: LoadQuizComponent,
       },
+      {
+        path: 'instruction/:id',
+        component: InstructionsComponent,
+      },
     ],
+  },
+  {
+    path: 'start/:id',
+    component: StartComponent,
+    canActivate: [NormalGuard],
   },
 ];
 
