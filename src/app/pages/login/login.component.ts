@@ -43,9 +43,8 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    this.loginService.getToken(this.loginDetail).subscribe(
-      (data: any) => {
-        // Swal.fire('Success', 'your user token is generated', 'success');
+    this.loginService.getToken(this.loginDetail).subscribe({
+      next: (data: any) => {
         this.loginService.loginUser(data.token);
 
         // get current user and save in local storage
@@ -63,10 +62,11 @@ export class LoginComponent implements OnInit {
           this.loginService.logout();
         }
       },
-      (error) =>
+      error: (error) => {
         this._snackBar.open('Invalid username or password', 'ok', {
           duration: 3000,
-        })
-    );
+        });
+      },
+    });
   }
 }

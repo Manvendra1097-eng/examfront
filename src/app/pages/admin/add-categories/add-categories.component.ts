@@ -28,14 +28,14 @@ export class AddCategoriesComponent implements OnInit {
       });
     }
 
-    this.categoryService.addcategory(this.category).subscribe(
-      (data: any) => {
+    this.categoryService.addcategory(this.category).subscribe({
+      next: (data: any) => {
         Swal.fire('Success', 'Category added Succesfully', 'success');
         document.querySelector('form')?.reset();
       },
-      (error) => {
+      error: (error) => {
         Swal.fire('Error', 'Error from Server', 'error');
-      }
-    );
+      },
+    });
   }
 }
