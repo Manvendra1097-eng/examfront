@@ -16,6 +16,7 @@ export class StartComponent implements OnInit {
   marksGot = 0;
   correctAnswer = 0;
   attempted = 0;
+  isSubmited = false;
 
   constructor(
     private location: LocationStrategy,
@@ -58,6 +59,7 @@ export class StartComponent implements OnInit {
     }).then((e) => {
       if (e.isConfirmed) {
         // calculation
+        this.isSubmited = true;
         this.questions.forEach((q: any) => {
           if (q.givenAnswer == q.answer) {
             this.correctAnswer++;
@@ -65,9 +67,14 @@ export class StartComponent implements OnInit {
               this.questions[0].quiz.maxMarks / this.questions.length;
             this.marksGot += singleMarks;
           }
+
+          if (q.givenAnswer.trim() != '') {
+            this.attempted++;
+          }
         });
         console.log('correct answers ' + this.correctAnswer);
         console.log('marks got ' + this.marksGot);
+        console.log('attempted ' + this.attempted);
       }
     });
   }
